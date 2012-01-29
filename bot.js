@@ -14,6 +14,7 @@ var BONUSMESSAGES = [
 
 var Twss = require('twss');
 var Bot = require('ttapi');
+var BandName = require('bandname')
 var readline = require('readline');
 var bot = new Bot(AUTH, USERID, ROOMID);
 
@@ -54,6 +55,8 @@ bot.on('speak', function(data) {
         if (data.text.match(/\*bonus/i) || data.text.match(/\*boner/i) || data.text.match(/\*wet/i) || 
             data.text.match(/\*benga/i) || data.text.match(/\*fap/i)) {
             updateBonus(data);
+        } else if (data.text.match(/\*bandname/i) || data.text.match(/\*bn/i)) {
+            bot.speak(BandName.generate());
         } else if (data.text.match(/\*waxhole/i)) {
             bot.speak("Stick http://thewaxhole.com in your waxhole and thank me later.");
         } else if (data.text.match(/\*starttimer/i)) {
