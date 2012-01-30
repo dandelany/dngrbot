@@ -27,7 +27,7 @@ var bonusVoters = {};
 var timer = new Date().getTime();
 
 bot.on('roomChanged', function(data) {
-    bot.speak("All systems go, I guess.");
+    //bot.speak("All systems go, I guess.");
     //console.log()
 });
 
@@ -56,7 +56,9 @@ bot.on('speak', function(data) {
             data.text.match(/\*benga/i) || data.text.match(/\*fap/i)) {
             updateBonus(data);
         } else if (data.text.match(/\*bandname/i) || data.text.match(/\*bn/i)) {
-            bot.speak(BandName.generate());
+            var args = data.text.split('*')[1].split(" ");
+            if(args.length > 1) { bot.speak(BandName.generate(args[1])); }
+            else                { bot.speak(BandName.generate()); }
         } else if (data.text.match(/\*waxhole/i)) {
             bot.speak("Stick http://thewaxhole.com in your waxhole and thank me later.");
         } else if (data.text.match(/\*starttimer/i)) {
