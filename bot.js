@@ -1,4 +1,4 @@
-var AUTH = "auth+live+aca54cf2a8301e72b5f8c0f00d95a11536df9587";
+var AUTH = require('./botauth.js').data;
 var USERID = "4f0c9882a3f751170b00355a";
 var ROOMID = "4e1b2a7a14169c1b670063cb";
 var BONUSMESSAGES = [
